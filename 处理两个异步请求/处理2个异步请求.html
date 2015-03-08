@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script language="javascript">   
+function getData(oServer, oText, oSpan){
+    var xmlHttp;   //处理为局部变量
+    if(window.ActiveXObject)
+        xmlHttp = new ActiveXObject("Microsoft.XMLHttp");
+    else if(window.XMLHttpRequest)
+        xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function f(){
+    console.log("哎呀， 2个请求都到啦");
+}
+    xmlHttp.open("GET",oServer);
+    xmlHttp.send(null);
+}
+function test(){
+    //同时发送两个不同的异步请求
+    getData('ajax.php','first','firstSpan');
+    getData('ajax.php','second','secondSpan');
+}
+
+</script>
+	</head>
+	<body>
+	<form>
+    <input type="button" value="发送" onclick="test()">
+</form>
+	</body>
+</html>

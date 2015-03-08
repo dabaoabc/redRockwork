@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+<p id="p">
+	data = {
+    "page":3,
+    "travelers":[
+        {"nickName":"andycall","userImg":"..."},
+        {"nickName":"boolean93","userImg":"..."},
+        {"nickName":"zeroling","userImg":"..."},
+        {"nickName":"lecion","userImg":"..."}
+    ],
+    "travelerCnt":48,
+    "size":20
+   }
+</p>
+<script>
+	var p=document.getElementById("p").innerHTML;
+	json = eval("(" + p + ")");
+	a=JSON.stringify(json);
+	console.log(a);
+</script>
+	</body>
+</html>
